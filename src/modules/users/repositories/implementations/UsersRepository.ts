@@ -48,6 +48,14 @@ class UsersRepository implements IUsersRepository {
 
   turnAdmin(receivedUser: User): User {
     // Complete aqui
+    const userReceived = this.users.find(user=> user.id === receivedUser.id );
+
+      Object.assign(userReceived,{
+        admin:true,
+        updated_at: new Date()
+      })
+      
+    return userReceived;
 
   }
 

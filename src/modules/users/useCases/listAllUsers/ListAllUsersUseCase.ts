@@ -13,9 +13,9 @@ class ListAllUsersUseCase {
     // Complete aqui
 
     const userId = this.usersRepository.findById(user_id)
-    
-    if(!userId){
-      throw new Error("Mensagem do erro")
+  
+   if(!userId || !userId.admin){
+      throw new Error("user id or user admin does not found")
     }
 
      return this.usersRepository.list()
