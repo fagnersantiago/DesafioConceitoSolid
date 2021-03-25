@@ -1,4 +1,5 @@
-import User  from "../../model/User";
+/* eslint-disable prettier/prettier */
+import User from "../../model/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 interface IRequest {
@@ -12,13 +13,13 @@ class TurnUserAdminUseCase {
     // Complete aqui
     const userId = this.usersRepository.findById(user_id);
 
-     if(!userId){
+    if (!userId) {
       throw new Error("Mensagem do erro");
-     }
+    }
 
-    const user = this.usersRepository.turnAdmin(userId)
+    const user = this.usersRepository.turnAdmin(userId);
 
-     return user;
+    return user;
   }
 }
 

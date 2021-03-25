@@ -1,6 +1,6 @@
 {
   "env": {
-    "es2020": true,
+    "es2021": true,
     "node": true,
     "jest": true
   },
@@ -22,8 +22,8 @@
   ],
   "rules": {
     "camelcase": "off",
-    "prettier/prettier": "off",
-    "import/no-unresolved": "off",
+    "prettier/prettier": "error",
+    "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
       "error",
       {

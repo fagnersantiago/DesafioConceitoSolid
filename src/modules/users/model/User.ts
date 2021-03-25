@@ -1,8 +1,7 @@
-import { usersRoutes } from "routes/users.routes";
+/* eslint-disable prettier/prettier */
 import { v4 as uuidV4 } from "uuid";
 
 class User {
-  
   id: string;
 
   name: string;
@@ -19,12 +18,10 @@ class User {
     if (!this.id) {
       this.id = uuidV4();
     }
-    if(this.admin === undefined){
-       this.admin = false
+    if (this.admin === undefined) {
+      this.admin = false;
     }
   }
-
 }
-
 
 export default User;

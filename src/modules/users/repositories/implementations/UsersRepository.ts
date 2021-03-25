@@ -1,4 +1,5 @@
-import User  from "../../model/User";
+/* eslint-disable prettier/prettier */
+import User from "../../model/User";
 import { IUsersRepository, ICreateUserDTO } from "../IUsersRepository";
 
 class UsersRepository implements IUsersRepository {
@@ -18,16 +19,15 @@ class UsersRepository implements IUsersRepository {
     return UsersRepository.INSTANCE;
   }
 
-  create({ name, email }: ICreateUserDTO): User{
-    const user =  new User()
+  create({ name, email }: ICreateUserDTO): User {
+    const user = new User();
 
-
-  Object.assign(user,  {
+    Object.assign(user, {
       name,
       email,
       admin: false,
-     created_at: new Date(),
-     updated_at: new Date(),
+      created_at: new Date(),
+      updated_at: new Date(),
     });
 
     this.users.push(user);
@@ -36,27 +36,27 @@ class UsersRepository implements IUsersRepository {
   }
 
   findById(id: string): User | undefined {
-    const idUser = this.users.find(user => user.id === id);
+    const idUser = this.users.find((user) => user.id === id);
     return idUser;
   }
 
   findByEmail(email: string): User | undefined {
-    const checkUserEmailExists = this.users.find(user => user.email === email);
+    const checkUserEmailExists = this.users.find(
+      (user) => user.email === email
+    );
     return checkUserEmailExists;
-
   }
 
   turnAdmin(receivedUser: User): User {
     // Complete aqui
-    const userReceived = this.users.find(user=> user.id === receivedUser.id );
+    const userReceived = this.users.find((user) => user.id === receivedUser.id);
 
-      Object.assign(userReceived,{
-        admin:true,
-        updated_at: new Date()
-      })
-      
+    Object.assign(userReceived, {
+      admin: true,
+      updated_at: new Date(),
+    });
+
     return userReceived;
-
   }
 
   list(): User[] {

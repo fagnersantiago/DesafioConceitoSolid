@@ -1,4 +1,5 @@
-import User  from "../model/User";
+/* eslint-disable prettier/prettier */
+import User from "../model/User";
 
 interface ICreateUserDTO {
   name: string;

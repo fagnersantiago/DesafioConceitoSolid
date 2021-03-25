@@ -1,5 +1,6 @@
+/* eslint-disable prettier/prettier */
 
-import User  from "../../model/User";
+import User from "../../model/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 interface IRequest {
@@ -12,13 +13,13 @@ class ListAllUsersUseCase {
   execute({ user_id }: IRequest): User[] {
     // Complete aqui
 
-    const userId = this.usersRepository.findById(user_id)
-  
-   if(!userId || !userId.admin){
-      throw new Error("user id or user admin does not found")
+    const userId = this.usersRepository.findById(user_id);
+
+    if (!userId || !userId.admin) {
+      throw new Error("user id or user admin does not found");
     }
 
-     return this.usersRepository.list()
+    return this.usersRepository.list();
   }
 }
 
